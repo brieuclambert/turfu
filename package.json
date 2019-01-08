@@ -1,0 +1,39 @@
+{
+  "name": "turfu",
+  "description": "bla",
+  "version": "0.1.0",
+  "icon": "icon.png",
+  "files": [
+    "dist"
+  ],
+  "repository": "abtasty/module",
+  "author": "brieuc Lambert",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run watch\" \"npm run serve\"",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "serve": "abtasty-module-cli serve",
+    "prepare": "npm run build",
+    "package": "webpack && cd dist && zip ../package.zip script.js readme.md",
+    "upload": "npm run package && abtasty-module-cli upload package.zip"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "url-loader": "^1.0.1",
+    "vue-loader": "^15.0.10",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1"
+  },
+  "dependencies": {
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.2"
+  }
+}
